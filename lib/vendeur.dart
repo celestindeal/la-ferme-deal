@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Vendeur extends StatelessWidget {
   @override
@@ -140,19 +141,46 @@ class Vendeur extends StatelessWidget {
       body: ListView.builder(
           itemCount: client.length,
           itemBuilder: (BuildContext context, int i) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(client[i]["nom"]),
-                  Text(client[i]["lieu"]),
-                  Text(client[i]["site"]),
-                  Text(client[i]["phone"]),
-                  Divider(
-                    color: Colors.grey,
+            String url = client[i]["site"];
+            return Column(
+              children: [
+                Center(
+                  child: Container(
+                    margin: const EdgeInsets.all(10.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(client[i]["nom"]),
+                        Text(client[i]["lieu"]),
+                        Text(client[i]["phone"]),
+                        url.isNotEmpty
+                            ? Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Icon(
+                                    Icons.language_rounded,
+                                    color: Colors.pink,
+                                    size: 24.0,
+                                    semanticLabel:
+                                        'Text to announce in accessibility modes',
+                                  ),
+                                  FlatButton(
+                                      onPressed: () async {
+                                        print(client[i]["site"]);
+                                        if (await canLaunch(url)) {
+                                          await launch(url);
+                                        }
+                                      },
+                                      child: Text("lien du site")),
+                                ],
+                              )
+                            : Container()
+                      ],
+                    ),
                   ),
-                ],
-              ),
+                ),
+                Divider(color: Colors.grey[300])
+              ],
             );
           }),
     );

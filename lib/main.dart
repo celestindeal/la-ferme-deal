@@ -16,6 +16,10 @@ class Main extends StatefulWidget {
 class _MainState extends State<Main> {
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: Colors.red[300],
+      ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
