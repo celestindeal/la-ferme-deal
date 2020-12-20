@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.0-nullsafety.3"
+  awesome_package:
+    dependency: "direct main"
+    description:
+      name: awesome_package
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   bazel_worker:
     dependency: transitive
     description:
@@ -324,6 +331,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.7"
+  responsive_layout_builder:
+    dependency: "direct main"
+    description:
+      name: responsive_layout_builder
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.4"
   scratch_space:
     dependency: transitive
     description:

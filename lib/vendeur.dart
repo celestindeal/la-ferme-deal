@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 class Vendeur extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List client = [
+    final List client = [
       {
         "lieu": "2715 Route de Roanne, 42640 Saint-Romain-la-Motte",
         "site": "https://www.tlmenparle.fr/",
@@ -150,9 +151,15 @@ class Vendeur extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(client[i]["nom"]),
+                        Text(client[i]["nom"],
+                            style: Theme.of(context).textTheme.headline1),
                         Text(client[i]["lieu"]),
-                        Text(client[i]["phone"]),
+                        FlatButton(
+                          onPressed: () {
+                            UrlLauncher.launch('tel:${client[i]["phone"]}');
+                          },
+                          child: Text(client[i]["phone"]),
+                        ),
                         url.isNotEmpty
                             ? Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
