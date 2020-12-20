@@ -1,33 +1,14 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:responsive_layout_builder/responsive_layout_builder.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class Accueil extends StatelessWidget {
   final navigatorKey = GlobalKey<NavigatorState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    const Map<LayoutSize, String> layoutSizeEnumToString = {
-      LayoutSize.watch: 'Wristwatch',
-      LayoutSize.mobile: 'Mobile',
-      LayoutSize.tablet: 'Tablet',
-      LayoutSize.desktop: 'Desktop',
-      LayoutSize.tv: 'TV',
-    };
-    const Map<MobileLayoutSize, String> mobileLayoutSizeEnumToString = {
-      MobileLayoutSize.small: 'Small',
-      MobileLayoutSize.medium: 'Medium',
-      MobileLayoutSize.large: 'Large',
-    };
-    const Map<TabletLayoutSize, String> tabletLayoutSizeEnumToString = {
-      TabletLayoutSize.small: 'Small',
-      TabletLayoutSize.large: 'Large',
-    };
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Acceuil'),
-      ),
-      body: Column(
+    ordi() {
+      return Column(
         children: [
           Center(
             child: ElevatedButton(
@@ -56,19 +37,26 @@ class Accueil extends StatelessWidget {
               },
             ),
           ),
-          ResponsiveLayoutBuilder(
-            builder: (context, size) => Center(
-              child: Column(
-                children: <Widget>[
-                  if (size.mobile != null) Text("on est sur un mobile"),
-                  if (size.tablet != null) Text("on est sur une tablette"),
-                  if (size.tablet == null && size.mobile == null)
-                    Text("on est sur un odrinateur"),
-                ],
-              ),
-            ),
-          ),
         ],
+      );
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Acceuil'),
+      ),
+      body: ResponsiveBuilder(
+        builder: (context, sizingInformation) {
+          // Check the sizing information here and return your UI
+          if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+            return ordi();
+          } else if (sizingInformation.deviceScreenType ==
+              DeviceScreenType.tablet) {
+            return ordi();
+          } else {
+            return ordi();
+          }
+        },
       ),
     );
   }

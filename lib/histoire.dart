@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class Histoire extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ordi() {
+      return Text("okkkkkk");
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Histoire"),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamedAndRemoveUntil(
-                context, '/', (Route<dynamic> route) => false);
-
-            // Navigator.pushNamed(context, '/');
-          },
-          child: Text('Go back!'),
-        ),
+      body: ResponsiveBuilder(
+        builder: (context, sizingInformation) {
+          // Check the sizing information here and return your UI
+          if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+            return ordi();
+          } else if (sizingInformation.deviceScreenType ==
+              DeviceScreenType.tablet) {
+            return ordi();
+          } else {
+            return ordi();
+          }
+        },
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
@@ -134,12 +135,8 @@ class Vendeur extends StatelessWidget {
         "phone": "04 77 65 81 81"
       },
     ];
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Vendeur"),
-      ),
-      body: ListView.builder(
+    ordi() {
+      return ListView.builder(
           itemCount: client.length,
           itemBuilder: (BuildContext context, int i) {
             String url = client[i]["site"];
@@ -189,7 +186,26 @@ class Vendeur extends StatelessWidget {
                 Divider(color: Colors.grey[300])
               ],
             );
-          }),
+          });
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Vendeur"),
+      ),
+      body: ResponsiveBuilder(
+        builder: (context, sizingInformation) {
+          // Check the sizing information here and return your UI
+          if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+            return ordi();
+          } else if (sizingInformation.deviceScreenType ==
+              DeviceScreenType.tablet) {
+            return ordi();
+          } else {
+            return ordi();
+          }
+        },
+      ),
     );
   }
 }

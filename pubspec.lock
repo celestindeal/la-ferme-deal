@@ -331,13 +331,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.7"
-  responsive_layout_builder:
+  responsive_builder:
     dependency: "direct main"
     description:
-      name: responsive_layout_builder
+      name: responsive_builder
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.4"
+    version: "0.3.0"
   scratch_space:
     dependency: transitive
     description:
