@@ -1,6 +1,6 @@
 import 'dart:io';
+import 'package:ferme/ppBar.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class Accueil extends StatelessWidget {
   final navigatorKey = GlobalKey<NavigatorState>();
@@ -42,22 +42,8 @@ class Accueil extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Acceuil'),
-      ),
-      body: ResponsiveBuilder(
-        builder: (context, sizingInformation) {
-          // Check the sizing information here and return your UI
-          if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
-            return ordi();
-          } else if (sizingInformation.deviceScreenType ==
-              DeviceScreenType.tablet) {
-            return ordi();
-          } else {
-            return ordi();
-          }
-        },
-      ),
+      appBar: headerNav(context),
+      body: ordi(),
     );
   }
 }

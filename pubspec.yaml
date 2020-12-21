@@ -26,6 +26,7 @@ dependencies:
   url_launcher: ^5.4.10
   awesome_package: ^0.0.1
   responsive_builder: ^0.3.0
+  google_maps: ^3.4.1
 
 
   # The following adds the Cupertino Icons font to your application.

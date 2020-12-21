@@ -1,3 +1,4 @@
+import 'package:ferme/ppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -9,9 +10,7 @@ class Produit extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Produit"),
-      ),
+      appBar: headerNav(context),
       body: ResponsiveBuilder(
         builder: (context, sizingInformation) {
           // Check the sizing information here and return your UI
