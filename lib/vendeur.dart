@@ -1,12 +1,10 @@
 import 'dart:html';
-
+import 'package:ferme/main.dart';
 import 'package:ferme/ppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
-import 'package:google_maps/google_maps.dart';
-import 'dart:ui' as ui;
 
 final List client = [
   {
@@ -138,45 +136,44 @@ final List client = [
   },
 ];
 
-class GoogleMap extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    String htmlId = "7";
+// class GoogleMap extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     String htmlId = "7";
 
-    ui.platformViewRegistry.registerViewFactory(htmlId, (int viewId) {
-      final mapOptions = MapOptions()
-        ..zoom = 12
-        ..center = LatLng(46.082366943359375, 3.96091890335083);
-      // on place les drapeaux
-      final myLatlng = LatLng(46.082366943359375, 3.96091890335083);
-      final elem = DivElement()
-        ..id = htmlId
-        ..style.width = "100%"
-        ..style.height = "100%"
-        ..style.border = 'none';
+//     ui.platformViewRegistry.registerViewFactory(htmlId, (int viewId) {
+//       final mapOptions = MapOptions()
+//         ..zoom = 12
+//         ..center = LatLng(46.082366943359375, 3.96091890335083);
+//       // on place les drapeaux
+//       final myLatlng = LatLng(46.082366943359375, 3.96091890335083);
+//       final elem = DivElement()
+//         ..id = htmlId
+//         ..style.width = "100%"
+//         ..style.height = "100%"
+//         ..style.border = 'none';
 
-      final map = GMap(elem, mapOptions);
+//       final map = GMap(elem, mapOptions);
 
-      Marker(MarkerOptions()
-        ..position = myLatlng
-        ..map = map
-        ..icon =
-            'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-        ..title = 'Hello World!');
+//       Marker(MarkerOptions()
+//         ..position = myLatlng
+//         ..map = map
+//         ..icon =
+//             'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+//         ..title = 'Hello World!');
 
-      return elem;
-    });
+//       return elem;
+//     });
 
-    return HtmlElementView(viewType: htmlId);
-  }
-}
+//     return HtmlElementView(viewType: htmlId);
+//   }
+// }
 
 class Vendeur extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ordi() {
-      return Column(
-        children: [
+      return
           // Text("MAP", style: Theme.of(context).textTheme.headline3),
           // Container(
           //   color: Colors.blue,
@@ -186,57 +183,82 @@ class Vendeur extends StatelessWidget {
           //     child: GoogleMap(),
           //   ),
           // ),
-          Expanded(
-            child: ListView.builder(
-                itemCount: client.length,
-                itemBuilder: (BuildContext context, int i) {
-                  String url = client[i]["site"];
-                  return Column(
-                    children: [
-                      Center(
-                        child: Container(
-                          color: Colors.red,
-                          margin: const EdgeInsets.all(10.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(client[i]["nom"],
-                                  style: Theme.of(context).textTheme.headline1),
-                              Text(client[i]["lieu"]),
-                              FlatButton(
-                                onPressed: () {
-                                  UrlLauncher.launch(
-                                      'tel:${client[i]["phone"]}');
-                                },
-                                child: Text(client[i]["phone"]),
-                              ),
-                              url.isNotEmpty
-                                  ? Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        FlatButton(
-                                            onPressed: () async {
-                                              print(client[i]["site"]);
-                                              if (await canLaunch(url)) {
-                                                await launch(url);
-                                              }
-                                            },
-                                            child: Text("lien du site")),
-                                      ],
-                                    )
-                                  : Container()
-                            ],
+
+          Row(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width * 0.15,
+          ),
+          Container(
+            child: Expanded(
+              child: ListView.builder(
+                  itemCount: client.length,
+                  itemBuilder: (BuildContext context, int i) {
+                    String url = client[i]["site"];
+                    return Column(
+                      children: [
+                        Container(
+                          height: 10,
+                        ),
+                        Center(
+                          child: Container(
+                            // color: rouge_ferme,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  client[i]["nom"],
+                                  style: TextStyle(
+                                      fontFamily: 'Compagnon-Medium',
+                                      fontSize: 18,
+                                      color: rouge_ferme),
+                                ),
+                                Text(client[i]["lieu"],
+                                    style:
+                                        Theme.of(context).textTheme.headline4),
+                                FlatButton(
+                                  onPressed: () {
+                                    UrlLauncher.launch(
+                                        'tel:${client[i]["phone"]}');
+                                  },
+                                  child: Text(client[i]["phone"],
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline2),
+                                ),
+                                url.isNotEmpty
+                                    ? Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          FlatButton(
+                                              onPressed: () async {
+                                                print(client[i]["site"]);
+                                                if (await canLaunch(url)) {
+                                                  await launch(url);
+                                                }
+                                              },
+                                              child: Text("lien du site",
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .headline2)),
+                                        ],
+                                      )
+                                    : Container()
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        color: Colors.grey[500],
-                        height: 3,
-                        width: MediaQuery.of(context).size.width * 0.9,
-                      ),
-                    ],
-                  );
-                }),
+                        Container(
+                          height: 10,
+                        ),
+                      ],
+                    );
+                  }),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.15,
           ),
         ],
       );

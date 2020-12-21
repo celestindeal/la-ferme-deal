@@ -13,19 +13,31 @@ class Main extends StatefulWidget {
   _MainState createState() => _MainState();
 }
 
+Color _getColorFromHex(String hexColor) {
+  hexColor = hexColor.replaceAll("#", "");
+  if (hexColor.length == 6) {
+    hexColor = "FF" + hexColor;
+  }
+  if (hexColor.length == 8) {
+    return Color(int.parse("0x$hexColor"));
+  }
+}
+
+Color rouge_ferme = _getColorFromHex('e40e20');
+
 class _MainState extends State<Main> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         textTheme: TextTheme(
-          headline1: TextStyle(fontFamily: 'Compagnon-Bold', fontSize: 18),
+          headline1: TextStyle(fontFamily: 'Compagnon-Bold', fontSize: 25),
           headline2: TextStyle(fontFamily: 'Compagnon-Italic', fontSize: 18),
-          headline3: TextStyle(fontFamily: 'Compagnon-Light', fontSize: 25),
+          headline3: TextStyle(fontFamily: 'Compagnon-Light', fontSize: 18),
           headline4: TextStyle(fontFamily: 'Compagnon-Medium', fontSize: 18),
           headline5: TextStyle(fontFamily: 'Compagnon-Roman', fontSize: 18),
         ),
         brightness: Brightness.light,
-        primaryColor: Colors.red[300],
+        primaryColor: rouge_ferme,
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',

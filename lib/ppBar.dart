@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 AppBar headerNav(
   context,
 ) {
+  double taille = MediaQuery.of(context).size.width;
   return AppBar(
     automaticallyImplyLeading: false,
     title: Center(
@@ -11,19 +12,32 @@ AppBar headerNav(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/', (Route<dynamic> route) => false);
-            },
-            child: Text("La ferme Deal",
-                style: Theme.of(context).textTheme.headline1),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.2,
+            child: FlatButton(
+              child: Text(
+                "La ferme Deal",
+                style: TextStyle(
+                    fontFamily: 'Compagnon-Bold',
+                    fontSize: 8 + (0.01 * taille)),
+              ),
+              onPressed: () {
+                // Navigate to the second screen using a named route.
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/', (Route<dynamic> route) => false);
+              },
+            ),
           ),
           Row(
             children: [
-              Center(
+              Container(
                 child: FlatButton(
-                  child: Text('Produit'),
+                  child: Text(
+                    'Produits',
+                    style: TextStyle(
+                        fontFamily: 'Compagnon-Roman',
+                        fontSize: 6 + (0.01 * taille)),
+                  ),
                   onPressed: () {
                     // Navigate to the second screen using a named route.
                     Navigator.pushNamedAndRemoveUntil(
@@ -31,9 +45,15 @@ AppBar headerNav(
                   },
                 ),
               ),
-              Center(
+              Container(
+                margin: EdgeInsets.all(2 + (0.01 * taille)),
                 child: FlatButton(
-                  child: Text('Histoire'),
+                  child: Text(
+                    'Histoire',
+                    style: TextStyle(
+                        fontFamily: 'Compagnon-Roman',
+                        fontSize: 6 + (0.01 * taille)),
+                  ),
                   onPressed: () {
                     // Navigate to the second screen using a named route.
 
@@ -42,9 +62,14 @@ AppBar headerNav(
                   },
                 ),
               ),
-              Center(
+              Container(
                 child: FlatButton(
-                  child: Text('Vendeur'),
+                  child: Text(
+                    'Partenaires',
+                    style: TextStyle(
+                        fontFamily: 'Compagnon-Roman',
+                        fontSize: 6 + (0.01 * taille)),
+                  ),
                   onPressed: () {
                     // Navigate to the second screen using a named route.
 

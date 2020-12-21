@@ -8,36 +8,33 @@ class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ordi() {
-      return Column(
-        children: [
-          Center(
-            child: ElevatedButton(
-              child: Text('Produit'),
-              onPressed: () {
-                // Navigate to the second screen using a named route.
-                Navigator.pushNamed(context, '/second');
-              },
+      return SingleChildScrollView(
+        child: Row(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width * 0.1,
             ),
-          ),
-          Center(
-            child: ElevatedButton(
-              child: Text('Histoire'),
-              onPressed: () {
-                // Navigate to the second screen using a named route.
-                Navigator.pushNamed(context, '/histoire');
-              },
+            Container(
+              child: Expanded(
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(30.0),
+                      child: Text(
+                          "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.  L'étude formelle des textes s'appuie sur la linguistique, qui est l'approche scientifique du langage. ",
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.headline5),
+                    ),
+                    Divider(color: Colors.grey[300]),
+                  ],
+                ),
+              ),
             ),
-          ),
-          Center(
-            child: ElevatedButton(
-              child: Text('Vendeur'),
-              onPressed: () {
-                // Navigate to the second screen using a named route.
-                Navigator.pushNamed(context, '/vendeur');
-              },
+            Container(
+              width: MediaQuery.of(context).size.width * 0.1,
             ),
-          ),
-        ],
+          ],
+        ),
       );
     }
 
