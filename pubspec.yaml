@@ -27,7 +27,7 @@ dependencies:
   awesome_package: ^0.0.1
   responsive_builder: ^0.3.0
   google_maps: ^3.4.1
-  carousel_slider: ^2.3.1
+  carousel_pro: ^1.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -70,11 +70,40 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - img/fromage.png
-    - img/img2.jpg
-    - img/img3.jpg
-    - img/img4.jpg
-    - img/img5.jpg
+    - img/aperi.jpg
+    - img/barquette.jpg
+    - img/brique.jpg
+    - img/coeur.jpg
+    - img/fromage_sec.jpg
+    - img/lait.jpg
+    - img/miel_montagne.jpg
+    - img/miel.jpg
+    - img/oeuf.jpg
+    - img/plateau.jpg
+    - img/mere.jpg
+    - img/pere.jpg
+    - img/bandeau-sec.jpg
+    - img/bandeau_demi_sec.jpg
+    - img/bandeauplateau.jpg
+    - img/bande.jpg
+    - img/blanc.jpg
+    - img/camion.jpg
+    - img/motte.jpg
+    - img/sec.jpg
+    - img/specialiter.jpg
+    - img/demi_sec.jpg
+    - img/frais.jpg
+    - img/miel_fleur.jpg
+
+
+
+
+
+
+
+
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

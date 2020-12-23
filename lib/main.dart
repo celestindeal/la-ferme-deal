@@ -23,7 +23,8 @@ Color _getColorFromHex(String hexColor) {
   }
 }
 
-Color rouge_ferme = _getColorFromHex('e40e20');
+// Color rouge_ferme = _getColorFromHex('e40e20');
+Color rouge_ferme = _getColorFromHex('7A221B');
 
 class _MainState extends State<Main> {
   Widget build(BuildContext context) {
