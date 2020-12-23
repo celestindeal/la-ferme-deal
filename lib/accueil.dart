@@ -164,8 +164,12 @@ class Accueil extends StatelessWidget {
             Container(
               color: rouge_ferme,
               height: MediaQuery.of(context).size.height * 0.1,
-              width: MediaQuery.of(context).size.width * 0.1,
-              child: Text("numéro de télephone"),
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                children: [
+                  Text("numéro de télephone"),
+                ],
+              ),
             )
           ],
         ),

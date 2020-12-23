@@ -10,15 +10,29 @@ class Produit extends StatefulWidget {
 
 class _ProduitState extends State<Produit> {
   List produit = [
-    {"img": "img/sec.jpg", "text": "sec"},
-    {"img": "img/demi_sec.jpg", "text": "demi-sec"},
-    {"img": "img/frais.jpg", "text": "frais"},
-    {"img": "img/brique.jpg", "text": "Brique cendrée"},
-    {"img": "img/coeur.jpg", "text": "coeur"},
+    {"aff": "1", "img": "img/sec.jpg", "text": "sec"},
+    {"aff": "1", "img": "img/demi_sec.jpg", "text": "demi-sec"},
+    {"aff": "1", "img": "img/frais.jpg", "text": "frais"},
+    {"aff": "1", "img": "img/brique.jpg", "text": "Brique cendrée"},
+    {"aff": "1", "img": "img/coeur.jpg", "text": "coeur"},
+    {"aff": "0", "img": "", "text": ""},
   ];
   @override
   Widget build(BuildContext context) {
     ordi(BuildContext context) {
+      aff_produit(int i) {
+        print("object");
+        return Column(
+          children: [
+            Text(produit[i]['text']),
+            Image.asset(
+              produit[i]['img'],
+              width: MediaQuery.of(context).size.width * 0.3,
+            ),
+          ],
+        );
+      }
+
       double taille = MediaQuery.of(context).size.width;
       double font = 5 + taille * 0.005;
       return Column(
@@ -39,11 +53,20 @@ class _ProduitState extends State<Produit> {
                 onPressed: () {
                   setState(() {
                     produit = [
-                      {"img": "img/sec.jpg", "text": "sec"},
-                      {"img": "img/demi_sec.jpg", "text": "demi-sec"},
-                      {"img": "img/frais.jpg", "text": "frais"},
-                      {"img": "img/brique.jpg", "text": "Brique cendrée"},
-                      {"img": "img/coeur.jpg", "text": "coeur"},
+                      {"aff": "1", "img": "img/sec.jpg", "text": "sec"},
+                      {
+                        "aff": "1",
+                        "img": "img/demi_sec.jpg",
+                        "text": "demi-sec"
+                      },
+                      {"aff": "1", "img": "img/frais.jpg", "text": "frais"},
+                      {
+                        "aff": "1",
+                        "img": "img/brique.jpg",
+                        "text": "Brique cendrée"
+                      },
+                      {"aff": "1", "img": "img/coeur.jpg", "text": "coeur"},
+                      {"aff": "0", "img": "", "text": ""},
                     ];
                   });
                 },
@@ -59,8 +82,20 @@ class _ProduitState extends State<Produit> {
                 onPressed: () {
                   setState(() {
                     produit = [
-                      {"img": "img/blanc.jpg", "text": "Le fromage blanc"},
-                      {"img": "img/barquette.jpg", "text": "Plaque de 6"},
+                      {
+                        "aff": "1",
+                        "img": "img/blanc.jpg",
+                        "text": "Le fromage blanc"
+                      },
+                      {
+                        "aff": "1",
+                        "img": "img/barquette.jpg",
+                        "text": "Plaque de 6"
+                      },
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
                     ];
                   });
                 },
@@ -76,9 +111,20 @@ class _ProduitState extends State<Produit> {
                 onPressed: () {
                   setState(() {
                     produit = [
-                      {"img": "img/specialiter.jpg", "text": "échallote ....."},
-                      {"img": "img/motte.jpg", "text": "Motte"},
-                      {"img": "img/aperi.jpg", "text": "Apéri-vache"},
+                      {
+                        "aff": "1",
+                        "img": "img/specialiter.jpg",
+                        "text": "échallote ....."
+                      },
+                      {"aff": "1", "img": "img/motte.jpg", "text": "Motte"},
+                      {
+                        "aff": "1",
+                        "img": "img/aperi.jpg",
+                        "text": "Apéri-vache"
+                      },
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
                     ];
                   });
                 },
@@ -94,8 +140,20 @@ class _ProduitState extends State<Produit> {
                 onPressed: () {
                   setState(() {
                     produit = [
-                      {"img": "img/plateau.jpg", "text": "Plateau découverte"},
-                      {"img": "img/plateau.jpg", "text": "Plateau gourmand"},
+                      {
+                        "aff": "1",
+                        "img": "img/plateau.jpg",
+                        "text": "Plateau découverte"
+                      },
+                      {
+                        "aff": "1",
+                        "img": "img/plateau.jpg",
+                        "text": "Plateau gourmand"
+                      },
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
                     ];
                   });
                 },
@@ -111,12 +169,20 @@ class _ProduitState extends State<Produit> {
                 onPressed: () {
                   setState(() {
                     produit = [
-                      {"img": "img/oeuf.jpg", "text": "oeufs"},
+                      {"aff": "1", "img": "img/oeuf.jpg", "text": "oeufs"},
                       {
+                        "aff": "1",
                         "img": "img/miel_montagne.jpg",
                         "text": "Miel de montagne"
                       },
-                      {"img": "img/miel_fleur.jpg", "text": "Miel de fleurs"},
+                      {
+                        "aff": "1",
+                        "img": "img/miel_fleur.jpg",
+                        "text": "Miel de fleurs"
+                      },
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
                     ];
                   });
                 },
@@ -132,34 +198,80 @@ class _ProduitState extends State<Produit> {
                 onPressed: () {
                   setState(() {
                     produit = [
-                      {"img": "img/lait.jpg", "text": "Lait"},
+                      {"aff": "1", "img": "img/lait.jpg", "text": "Lait"},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
+                      {"aff": "0", "img": "", "text": ""},
                     ];
                   });
                 },
               ),
             ]),
           ),
-          Container(
-            child: Expanded(
-              child: ListView.builder(
-                  itemCount: produit.length,
-                  padding: const EdgeInsets.symmetric(vertical: 4.0),
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContext context, int i) {
-                    return Container(
-                      child: Column(
-                        children: [
-                          Text(produit[i]['text']),
-                          Image.asset(
-                            produit[i]['img'],
-                            width: MediaQuery.of(context).size.width * 0.3,
-                          ),
-                        ],
-                      ),
-                    );
-                  }),
-            ),
-          ),
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: taille * 0.05,
+                  ),
+                  Container(
+                    width: taille * 0.25,
+                    child:
+                        produit[0]['aff'] != 1 ? aff_produit(0) : Container(),
+                  ),
+                  Container(
+                    width: taille * 0.05,
+                  ),
+                  Container(
+                    width: taille * 0.25,
+                    child:
+                        produit[1]['aff'] != 1 ? aff_produit(1) : Container(),
+                  ),
+                  Container(
+                    width: taille * 0.05,
+                  ),
+                  Container(
+                    width: taille * 0.25,
+                    child:
+                        produit[2]['aff'] != 1 ? aff_produit(2) : Container(),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: taille * 0.05,
+                  ),
+                  Container(
+                    width: taille * 0.25,
+                    child:
+                        produit[3]["aff"] != 1 ? aff_produit(3) : Container(),
+                  ),
+                  Container(
+                    width: taille * 0.05,
+                  ),
+                  Container(
+                    width: taille * 0.25,
+                    child:
+                        produit[4]["aff"] != 1 ? aff_produit(4) : Container(),
+                  ),
+                  Container(
+                    width: taille * 0.05,
+                  ),
+                  Container(
+                    width: taille * 0.25,
+                    child: produit[5]["aff"] != 1 ? aff_produit(5) : null,
+                  )
+                ],
+              ),
+            ],
+          )
         ],
       );
     }
