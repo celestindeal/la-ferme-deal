@@ -28,6 +28,7 @@ dependencies:
   responsive_builder: ^0.3.0
   google_maps: ^3.4.1
   carousel_pro: ^1.0.0
+  photo_view: ^0.10.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -94,13 +95,24 @@ flutter:
     - img/demi_sec.jpg
     - img/frais.jpg
     - img/miel_fleur.jpg
+    - img/vache.svg
+    - img/vache.jpg
+    - img/facebook.jpg
 
 
 
-
-
-
-
+    - img/histoire/p1.png
+    - img/histoire/p2.png
+    - img/histoire/p3.png
+    - img/histoire/p4.png
+    - img/histoire/p5.png
+    - img/histoire/p6.png
+    - img/histoire/p7.png
+    - img/histoire/p8.png
+    - img/histoire/p9.png
+    - img/histoire/p10.png
+    - img/histoire/p11.png
+    - img/histoire/p12.png
 
 
 

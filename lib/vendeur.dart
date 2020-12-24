@@ -252,6 +252,11 @@ class Vendeur extends StatelessWidget {
                         Container(
                           height: 10,
                         ),
+                        Container(
+                          color: rouge_ferme,
+                          height: 2,
+                          width: MediaQuery.of(context).size.width,
+                        ),
                       ],
                     );
                   }),

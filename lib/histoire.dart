@@ -1,16 +1,33 @@
 import 'package:ferme/ppBar.dart';
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Histoire extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ordi() {
+      aff_photo(String image) {
+        return showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return Container(
+                  child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: PhotoView(
+                  imageProvider: AssetImage(image),
+                ),
+              ));
+            });
+      }
+
       return SingleChildScrollView(
         child: Row(
           children: [
             Container(
-              width: MediaQuery.of(context).size.width * 0.15,
+              width: MediaQuery.of(context).size.width * 0.1,
             ),
             Container(
               child: Expanded(
@@ -18,28 +35,133 @@ class Histoire extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Le fromage (Roannais)"),
-                    Text("Braquette (6 faiselles)"),
-                    Text("Apérivache 150 gr"),
-                    Text("Apérivache 200 gr"),
-                    Text("Brique cendrée"),
-                    Text("Spécialité"),
-                    Text("Bouteille de lait"),
-                    Text("Plateau découverte"),
-                    Text(
-                        "Une Brique cendrée, 1 coeur saveur truffe d'été, 3 fromages d'affinage différents."),
-                    Text("Plateau gourmant"),
-                    Text(
-                        "Une Brique cendrée, 1 coeur saveur truffe d'été, 3 fromages d'affinage différents."),
-                    Text("6 oeufs"),
-                    Text("Miel de montagne"),
-                    Text("Miel de fleurs"),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p1.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p1.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p2.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p2.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p3.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p3.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p4.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p4.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p5.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p5.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p6.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p6.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p7.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p7.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p8.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p8.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p9.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p9.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p10.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p10.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p11.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p11.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            aff_photo('img/histoire/p12.png');
+                          },
+                          child: Image.asset(
+                            'img/histoire/p12.png',
+                            width: MediaQuery.of(context).size.width * 0.25,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.15,
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:ferme/main.dart';
 import 'package:ferme/ppBar.dart';
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Produit extends StatefulWidget {
@@ -21,26 +22,46 @@ class _ProduitState extends State<Produit> {
   Widget build(BuildContext context) {
     ordi(BuildContext context) {
       aff_produit(int i) {
-        print("object");
+        // fonction qui affiche un seul produit
         return Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(produit[i]['text']),
-            Image.asset(
-              produit[i]['img'],
-              width: MediaQuery.of(context).size.width * 0.3,
+            Text(produit[i]['text'],
+                style: Theme.of(context).textTheme.headline4),
+            GestureDetector(
+              onTap: () {
+                return showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Container(
+                          child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: PhotoView(
+                          imageProvider: AssetImage(produit[i]['img']),
+                        ),
+                      ));
+                    });
+              },
+              child: Image.asset(
+                produit[i]['img'],
+                width: MediaQuery.of(context).size.width * 0.3,
+              ),
             ),
           ],
         );
       }
 
       double taille = MediaQuery.of(context).size.width;
-      double font = 5 + taille * 0.005;
+      double font = 8 + taille * 0.005;
       return Column(
         children: [
           Container(
             width: taille,
-            height: MediaQuery.of(context).size.height * 0.1,
-            color: Colors.red,
+            height: MediaQuery.of(context).size.height * 0.04,
+            color: Colors.grey[500],
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               FlatButton(
                 child: Text(
@@ -169,7 +190,6 @@ class _ProduitState extends State<Produit> {
                 onPressed: () {
                   setState(() {
                     produit = [
-                      {"aff": "1", "img": "img/oeuf.jpg", "text": "oeufs"},
                       {
                         "aff": "1",
                         "img": "img/miel_montagne.jpg",
@@ -180,6 +200,7 @@ class _ProduitState extends State<Produit> {
                         "img": "img/miel_fleur.jpg",
                         "text": "Miel de fleurs"
                       },
+                      {"aff": "1", "img": "img/oeuf.jpg", "text": "oeufs"},
                       {"aff": "0", "img": "", "text": ""},
                       {"aff": "0", "img": "", "text": ""},
                       {"aff": "0", "img": "", "text": ""},
@@ -211,8 +232,16 @@ class _ProduitState extends State<Produit> {
               ),
             ]),
           ),
+
+          //affichage des produits
+          Container(
+            height: 10,
+            width: MediaQuery.of(context).size.width * 0.9,
+          ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //première ligne
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -221,26 +250,28 @@ class _ProduitState extends State<Produit> {
                   ),
                   Container(
                     width: taille * 0.25,
-                    child:
-                        produit[0]['aff'] != 1 ? aff_produit(0) : Container(),
+                    child: produit[0]['aff'] != 1 ? aff_produit(0) : null,
                   ),
                   Container(
                     width: taille * 0.05,
                   ),
                   Container(
                     width: taille * 0.25,
-                    child:
-                        produit[1]['aff'] != 1 ? aff_produit(1) : Container(),
+                    child: produit[1]['aff'] != 1 ? aff_produit(1) : null,
                   ),
                   Container(
                     width: taille * 0.05,
                   ),
                   Container(
                     width: taille * 0.25,
-                    child:
-                        produit[2]['aff'] != 1 ? aff_produit(2) : Container(),
+                    child: produit[2]['aff'] != 1 ? aff_produit(2) : null,
                   )
                 ],
+              ),
+              //deuxième ligne
+              Container(
+                height: 10,
+                width: MediaQuery.of(context).size.width * 0.9,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -250,16 +281,14 @@ class _ProduitState extends State<Produit> {
                   ),
                   Container(
                     width: taille * 0.25,
-                    child:
-                        produit[3]["aff"] != 1 ? aff_produit(3) : Container(),
+                    child: produit[3]["aff"] != 1 ? aff_produit(3) : null,
                   ),
                   Container(
                     width: taille * 0.05,
                   ),
                   Container(
                     width: taille * 0.25,
-                    child:
-                        produit[4]["aff"] != 1 ? aff_produit(4) : Container(),
+                    child: produit[4]["aff"] != 1 ? aff_produit(4) : null,
                   ),
                   Container(
                     width: taille * 0.05,
