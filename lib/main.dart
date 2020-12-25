@@ -44,7 +44,7 @@ class _MainState extends State<Main> {
       initialRoute: '/',
       routes: {
         '/': (context) => Accueil(),
-        '/second': (context) => Produit(),
+        '/produit': (context) => Produit(),
         '/histoire': (context) => Histoire(),
         '/vendeur': (context) => Vendeur(),
       },

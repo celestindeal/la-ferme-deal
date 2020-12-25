@@ -1,6 +1,6 @@
-import 'dart:html';
 import 'package:ferme/main.dart';
 import 'package:ferme/ppBar.dart';
+import 'package:ferme/ppBar_phone.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -136,154 +136,200 @@ final List client = [
   },
 ];
 
-// class GoogleMap extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     String htmlId = "7";
-
-//     ui.platformViewRegistry.registerViewFactory(htmlId, (int viewId) {
-//       final mapOptions = MapOptions()
-//         ..zoom = 12
-//         ..center = LatLng(46.082366943359375, 3.96091890335083);
-//       // on place les drapeaux
-//       final myLatlng = LatLng(46.082366943359375, 3.96091890335083);
-//       final elem = DivElement()
-//         ..id = htmlId
-//         ..style.width = "100%"
-//         ..style.height = "100%"
-//         ..style.border = 'none';
-
-//       final map = GMap(elem, mapOptions);
-
-//       Marker(MarkerOptions()
-//         ..position = myLatlng
-//         ..map = map
-//         ..icon =
-//             'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-//         ..title = 'Hello World!');
-
-//       return elem;
-//     });
-
-//     return HtmlElementView(viewType: htmlId);
-//   }
-// }
-
 class Vendeur extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ordi() {
-      return
-          // Text("MAP", style: Theme.of(context).textTheme.headline3),
-          // Container(
-          //   color: Colors.blue,
-          //   height: MediaQuery.of(context).size.height * 0.5,
-          //   width: MediaQuery.of(context).size.width * 0.8,
-          //   child: Center(
-          //     child: GoogleMap(),
-          //   ),
-          // ),
-
-          Row(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width * 0.15,
-          ),
-          Container(
-            child: Expanded(
-              child: ListView.builder(
-                  itemCount: client.length,
-                  itemBuilder: (BuildContext context, int i) {
-                    String url = client[i]["site"];
-                    return Column(
-                      children: [
-                        Container(
-                          height: 10,
-                        ),
-                        Center(
-                          child: Container(
-                            // color: rouge_ferme,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  client[i]["nom"],
-                                  style: TextStyle(
-                                      fontFamily: 'Compagnon-Medium',
-                                      fontSize: 18,
-                                      color: rouge_ferme),
-                                ),
-                                Text(client[i]["lieu"],
-                                    style:
-                                        Theme.of(context).textTheme.headline4),
-                                FlatButton(
-                                  onPressed: () {
-                                    UrlLauncher.launch(
-                                        'tel:${client[i]["phone"]}');
-                                  },
-                                  child: Text(client[i]["phone"],
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline2),
-                                ),
-                                url.isNotEmpty
-                                    ? Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          FlatButton(
-                                              onPressed: () async {
-                                                print(client[i]["site"]);
-                                                if (await canLaunch(url)) {
-                                                  await launch(url);
-                                                }
-                                              },
-                                              child: Text("lien du site",
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .headline2)),
-                                        ],
-                                      )
-                                    : Container()
-                              ],
+      return Scaffold(
+          appBar: headerNav(context),
+          body: Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.15,
+              ),
+              Container(
+                child: Expanded(
+                  child: ListView.builder(
+                      itemCount: client.length,
+                      itemBuilder: (BuildContext context, int i) {
+                        String url = client[i]["site"];
+                        return Column(
+                          children: [
+                            Container(
+                              height: 10,
                             ),
-                          ),
-                        ),
-                        Container(
-                          height: 10,
-                        ),
-                        Container(
-                          color: rouge_ferme,
-                          height: 2,
-                          width: MediaQuery.of(context).size.width,
-                        ),
-                      ],
-                    );
-                  }),
-            ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.15,
-          ),
-        ],
-      );
+                            Center(
+                              child: Container(
+                                // color: rouge_ferme,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      client[i]["nom"],
+                                      style: TextStyle(
+                                          fontFamily: 'Compagnon-Medium',
+                                          fontSize: 18,
+                                          color: rouge_ferme),
+                                    ),
+                                    Text(client[i]["lieu"],
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline4),
+                                    FlatButton(
+                                      onPressed: () {
+                                        UrlLauncher.launch(
+                                            'tel:${client[i]["phone"]}');
+                                      },
+                                      child: Text(client[i]["phone"],
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline2),
+                                    ),
+                                    url.isNotEmpty
+                                        ? Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              FlatButton(
+                                                  onPressed: () async {
+                                                    print(client[i]["site"]);
+                                                    if (await canLaunch(url)) {
+                                                      await launch(url);
+                                                    }
+                                                  },
+                                                  child: Text("lien du site",
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .headline2)),
+                                            ],
+                                          )
+                                        : Container()
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 10,
+                            ),
+                            Container(
+                              color: rouge_ferme,
+                              height: 2,
+                              width: MediaQuery.of(context).size.width,
+                            ),
+                          ],
+                        );
+                      }),
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.15,
+              ),
+            ],
+          ));
     }
 
-    return Scaffold(
-      appBar: headerNav(context),
-      body: ResponsiveBuilder(
-        builder: (context, sizingInformation) {
-          // Check the sizing information here and return your UI
-          if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
-            return ordi();
-          } else if (sizingInformation.deviceScreenType ==
-              DeviceScreenType.tablet) {
-            return ordi();
-          } else {
-            return ordi();
-          }
-        },
-      ),
+    phone() {
+      return Scaffold(
+          appBar: headerphone(context),
+          body: Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.15,
+              ),
+              Container(
+                child: Expanded(
+                  child: ListView.builder(
+                      itemCount: client.length,
+                      itemBuilder: (BuildContext context, int i) {
+                        String url = client[i]["site"];
+                        return Column(
+                          children: [
+                            Container(
+                              height: 10,
+                            ),
+                            Center(
+                              child: Container(
+                                // color: rouge_ferme,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      client[i]["nom"],
+                                      style: TextStyle(
+                                          fontFamily: 'Compagnon-Medium',
+                                          color: rouge_ferme),
+                                    ),
+                                    Text(
+                                      client[i]["lieu"],
+                                      style: TextStyle(
+                                        fontFamily: 'Compagnon-Medium',
+                                      ),
+                                    ),
+                                    FlatButton(
+                                      onPressed: () {
+                                        UrlLauncher.launch(
+                                            'tel:${client[i]["phone"]}');
+                                      },
+                                      child: Text(client[i]["phone"],
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline2),
+                                    ),
+                                    url.isNotEmpty
+                                        ? Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              FlatButton(
+                                                  onPressed: () async {
+                                                    print(client[i]["site"]);
+                                                    if (await canLaunch(url)) {
+                                                      await launch(url);
+                                                    }
+                                                  },
+                                                  child: Text("lien du site",
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .headline2)),
+                                            ],
+                                          )
+                                        : Container()
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 10,
+                            ),
+                            Container(
+                              color: rouge_ferme,
+                              height: 2,
+                              width: MediaQuery.of(context).size.width,
+                            ),
+                          ],
+                        );
+                      }),
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.15,
+              ),
+            ],
+          ));
+    }
+
+    return ResponsiveBuilder(
+      builder: (context, sizingInformation) {
+        // Check the sizing information here and return your UI
+        if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+          return ordi();
+        } else if (sizingInformation.deviceScreenType ==
+            DeviceScreenType.tablet) {
+          return ordi();
+        } else {
+          return phone();
+        }
+      },
     );
   }
 }

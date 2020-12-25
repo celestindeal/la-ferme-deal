@@ -19,11 +19,11 @@ AppBar headerNav(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset(
-                    'img/vache.jpg',
-                    width: 40,
-                    height: 40,
-                  ),
+                  // Image.asset(
+                  //   'img/vache.jpg',
+                  //   width: 40,
+                  //   height: 40,
+                  // ),
                   Text(
                     "La ferme Deal",
                     style: TextStyle(
@@ -52,7 +52,7 @@ AppBar headerNav(
                   onPressed: () {
                     // Navigate to the second screen using a named route.
                     Navigator.pushNamedAndRemoveUntil(
-                        context, '/second', (Route<dynamic> route) => false);
+                        context, '/produit', (Route<dynamic> route) => false);
                   },
                 ),
               ),
