@@ -194,9 +194,6 @@ class Histoire extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                Container(
                   child: Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,

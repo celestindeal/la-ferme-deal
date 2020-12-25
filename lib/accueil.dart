@@ -62,6 +62,17 @@ class Accueil extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                FlatButton(
+                    onPressed: () async {
+                      if (await canLaunch(
+                          "https://www.google.fr/maps/place/285+Chemin+de+la+Roche,+42640+Saint-Romain-la-Motte/@46.0875441,3.9602611,4364m/data=!3m1!1e3!4m12!1m6!3m5!1s0x47f400dfc0e7439f:0x207c8277064782e5!2sEcole+Publique!8m2!3d46.1011292!4d3.9658738!3m4!1s0x47f40140bfd291a7:0xf571736fe413daca!8m2!3d46.0821708!4d3.963975")) {
+                        await launch(
+                            "https://www.google.fr/maps/place/285+Chemin+de+la+Roche,+42640+Saint-Romain-la-Motte/@46.0875441,3.9602611,4364m/data=!3m1!1e3!4m12!1m6!3m5!1s0x47f400dfc0e7439f:0x207c8277064782e5!2sEcole+Publique!8m2!3d46.1011292!4d3.9658738!3m4!1s0x47f40140bfd291a7:0xf571736fe413daca!8m2!3d46.0821708!4d3.963975");
+                      }
+                    },
+                    child: Text(
+                      "285 chemin de la roche, 42 640 Saint Romain la Motte",
+                    )),
                 Row(
                   children: [
                     Text(
@@ -106,8 +117,8 @@ class Accueil extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Lundi au samedi: 8h - 12h et 17h - 19h"),
-                      Text("Dimanche:        8h - 12h "),
+                      Text("Lundi au samedi: 8h - 11h 30 et 17h - 19h"),
+                      Text("Dimanche:        8h - 11h 30 "),
                     ],
                   )
                 ],
@@ -129,15 +140,15 @@ class Accueil extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.5,
+                  height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   child: Carousel(
                     animationDuration: const Duration(seconds: 1),
                     showIndicator: false,
                     // borderRadius: false,
                     moveIndicatorFromBottom: 180.0,
-                    noRadiusForIndicator: true,
-                    overlayShadowSize: 0.2,
+                    noRadiusForIndicator: false,
+                    // overlayShadowSize: 0.2,
                     images: [
                       AssetImage(
                         'img/bandeau_demi_sec.jpg',
@@ -430,6 +441,17 @@ class Accueil extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     children: [
+                      FlatButton(
+                          onPressed: () async {
+                            if (await canLaunch(
+                                "https://www.google.fr/maps/place/285+Chemin+de+la+Roche,+42640+Saint-Romain-la-Motte/@46.0875441,3.9602611,4364m/data=!3m1!1e3!4m12!1m6!3m5!1s0x47f400dfc0e7439f:0x207c8277064782e5!2sEcole+Publique!8m2!3d46.1011292!4d3.9658738!3m4!1s0x47f40140bfd291a7:0xf571736fe413daca!8m2!3d46.0821708!4d3.963975")) {
+                              await launch(
+                                  "https://www.google.fr/maps/place/285+Chemin+de+la+Roche,+42640+Saint-Romain-la-Motte/@46.0875441,3.9602611,4364m/data=!3m1!1e3!4m12!1m6!3m5!1s0x47f400dfc0e7439f:0x207c8277064782e5!2sEcole+Publique!8m2!3d46.1011292!4d3.9658738!3m4!1s0x47f40140bfd291a7:0xf571736fe413daca!8m2!3d46.0821708!4d3.963975");
+                            }
+                          },
+                          child: Text(
+                            "285 chemin de la roche, 42 640 Saint Romain la Motte",
+                          )),
                       FlatButton(
                         child: Text(
                           "Numéro de télephone: 04 77 64 50 96",

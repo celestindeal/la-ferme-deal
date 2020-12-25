@@ -32,14 +32,14 @@ AppBar headerphone(
     ),
     actions: <Widget>[
       IconButton(
-        icon: const Icon(Icons.sports_bar_sharp),
+        icon: const Icon(Icons.import_contacts_outlined),
         onPressed: () {
           Navigator.pushNamedAndRemoveUntil(
               context, '/produit', (Route<dynamic> route) => false);
         },
       ),
       IconButton(
-        icon: const Icon(Icons.archive),
+        icon: const Icon(Icons.image_outlined),
         onPressed: () {
           Navigator.pushNamedAndRemoveUntil(
               context, '/histoire', (Route<dynamic> route) => false);
