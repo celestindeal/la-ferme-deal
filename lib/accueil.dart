@@ -11,6 +11,39 @@ class Accueil extends StatelessWidget {
   final navigatorKey = GlobalKey<NavigatorState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
+  List equipe = [
+    {
+      "nom": "Miriam",
+      "img": "img/pere.jpg",
+      "text":
+          "Miriam ^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
+    },
+    {
+      "nom": "Jean-Christophe",
+      "img": "img/pere.jpg",
+      "text":
+          "Jean Bonjourd^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
+    },
+    {
+      "nom": "Catie",
+      "img": "img/pere.jpg",
+      "text":
+          "Catie Bonjourd^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
+    },
+    {
+      "nom": "Anne",
+      "img": "img/pere.jpg",
+      "text":
+          "Anne Bonjourd^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
+    },
+    {
+      "nom": "Adrien",
+      "img": "img/pere.jpg",
+      "text":
+          "Adrien Bonjourd^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
+    },
+  ];
+
   Widget build(BuildContext context) {
     footer() {
       //footer
@@ -166,26 +199,26 @@ class Accueil extends StatelessWidget {
                   // nom
                   Container(
                       width: MediaQuery.of(context).size.width * 0.3,
-                      child: Center(child: Text("data"))),
+                      child: Center(child: Text(equipe[0]["nom"]))),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Container(
-                    child: Center(child: Text("data")),
+                    child: Center(child: Text(equipe[1]["nom"])),
                     width: MediaQuery.of(context).size.width * 0.3,
                   ),
                 ]),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
 //image
                   Image.asset(
-                    'img/pere.jpg',
+                    equipe[0]["img"],
                     width: MediaQuery.of(context).size.width * 0.3,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Image.asset(
-                    'img/pere.jpg',
+                    equipe[1]["img"],
                     width: MediaQuery.of(context).size.width * 0.3,
                   ),
                 ]),
@@ -194,7 +227,7 @@ class Accueil extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.25,
                     child: Text(
-                      "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.",
+                      equipe[0]["text"],
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -204,7 +237,7 @@ class Accueil extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.25,
                     child: Text(
-                      "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.",
+                      equipe[1]["text"],
                       textAlign: TextAlign.center,
                     ),
                   )
@@ -219,7 +252,7 @@ class Accueil extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
-                      "data",
+                      equipe[2]["nom"],
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -229,7 +262,7 @@ class Accueil extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
-                      "data,",
+                      equipe[3]["nom"],
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -239,28 +272,28 @@ class Accueil extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
-                      "data ",
+                      equipe[4]["nom"],
                       textAlign: TextAlign.center,
                     ),
                   )
                 ]),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Image.asset(
-                    'img/pere.jpg',
+                    equipe[2]["img"],
                     width: MediaQuery.of(context).size.width * 0.25,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Image.asset(
-                    'img/pere.jpg',
+                    equipe[3]["img"],
                     width: MediaQuery.of(context).size.width * 0.25,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Image.asset(
-                    'img/pere.jpg',
+                    equipe[4]["img"],
                     width: MediaQuery.of(context).size.width * 0.25,
                   ),
                 ]),
@@ -268,7 +301,7 @@ class Accueil extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
-                      "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent,",
+                      equipe[2]["text"],
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -278,7 +311,7 @@ class Accueil extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
-                      "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent,",
+                      equipe[3]["text"],
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -288,7 +321,7 @@ class Accueil extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
-                      "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, ",
+                      equipe[4]["text"],
                       textAlign: TextAlign.center,
                     ),
                   )
@@ -302,6 +335,27 @@ class Accueil extends StatelessWidget {
     }
 
     phone() {
+      aff_equipe(int i) {
+        return Column(
+          children: [
+            Container(
+                child: Center(
+                    child: Text(equipe[i]["nom"],
+                        style: Theme.of(context).textTheme.headline5))),
+            Image.asset(
+              equipe[i]["img"],
+            ),
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              child: Text(
+                equipe[i]["text"],
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        );
+      }
+
       double taille = MediaQuery.of(context).size.width;
       return Scaffold(
           appBar: headerphone(context),
@@ -366,96 +420,11 @@ class Accueil extends StatelessWidget {
                     ),
                   ),
                 ),
-                Column(
-                  children: [
-                    Container(
-                        child: Center(
-                            child: Text("data",
-                                style: Theme.of(context).textTheme.headline5))),
-                    Image.asset(
-                      'img/pere.jpg',
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10.0),
-                      child: Text(
-                        "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.  L'étude formelle des textes s'appuie sur la linguistique, qui est l'approche scientifique du langage. ",
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                        child: Center(
-                            child: Text("data",
-                                style: Theme.of(context).textTheme.headline5))),
-                    Image.asset(
-                      'img/pere.jpg',
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10.0),
-                      child: Text(
-                        "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.  L'étude formelle des textes s'appuie sur la linguistique, qui est l'approche scientifique du langage. ",
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                        child: Center(
-                            child: Text("data",
-                                style: Theme.of(context).textTheme.headline5))),
-                    Image.asset(
-                      'img/pere.jpg',
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10.0),
-                      child: Text(
-                        "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.  L'étude formelle des textes s'appuie sur la linguistique, qui est l'approche scientifique du langage. ",
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                        child: Center(
-                            child: Text("data",
-                                style: Theme.of(context).textTheme.headline5))),
-                    Image.asset(
-                      'img/pere.jpg',
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10.0),
-                      child: Text(
-                        "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.  L'étude formelle des textes s'appuie sur la linguistique, qui est l'approche scientifique du langage. ",
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                        child: Center(
-                            child: Text("data",
-                                style: Theme.of(context).textTheme.headline5))),
-                    Image.asset(
-                      'img/pere.jpg',
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10.0),
-                      child: Text(
-                        "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.  L'étude formelle des textes s'appuie sur la linguistique, qui est l'approche scientifique du langage. ",
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
+                aff_equipe(0),
+                aff_equipe(1),
+                aff_equipe(2),
+                aff_equipe(3),
+                aff_equipe(4),
                 Container(
                   color: rouge_ferme,
                   width: MediaQuery.of(context).size.width,

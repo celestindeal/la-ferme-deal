@@ -32,21 +32,21 @@ AppBar headerphone(
     ),
     actions: <Widget>[
       IconButton(
-        icon: const Icon(Icons.book),
+        icon: const Icon(Icons.sports_bar_sharp),
         onPressed: () {
           Navigator.pushNamedAndRemoveUntil(
               context, '/produit', (Route<dynamic> route) => false);
         },
       ),
       IconButton(
-        icon: const Icon(Icons.memory),
+        icon: const Icon(Icons.archive),
         onPressed: () {
           Navigator.pushNamedAndRemoveUntil(
               context, '/histoire', (Route<dynamic> route) => false);
         },
       ),
       IconButton(
-        icon: const Icon(Icons.build),
+        icon: const Icon(Icons.where_to_vote_outlined),
         onPressed: () {
           Navigator.pushNamedAndRemoveUntil(
               context, '/vendeur', (Route<dynamic> route) => false);

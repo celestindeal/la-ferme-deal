@@ -378,6 +378,7 @@ class _ProduitState extends State<Produit> {
                       {"aff": "1", "img": "img/coeur.jpg", "text": "coeur"},
                       {"aff": "0", "img": "", "text": ""},
                     ];
+                    Navigator.of(context).pop();
                   });
                 },
               ),
@@ -406,6 +407,7 @@ class _ProduitState extends State<Produit> {
                       {"aff": "0", "img": "", "text": ""},
                       {"aff": "0", "img": "", "text": ""},
                     ];
+                    Navigator.of(context).pop();
                   });
                 },
               ),
@@ -434,6 +436,7 @@ class _ProduitState extends State<Produit> {
                       {"aff": "0", "img": "", "text": ""},
                       {"aff": "0", "img": "", "text": ""},
                     ];
+                    Navigator.of(context).pop();
                   });
                 },
               ),
@@ -462,6 +465,7 @@ class _ProduitState extends State<Produit> {
                       {"aff": "0", "img": "", "text": ""},
                       {"aff": "0", "img": "", "text": ""},
                     ];
+                    Navigator.of(context).pop();
                   });
                 },
               ),
@@ -490,6 +494,7 @@ class _ProduitState extends State<Produit> {
                       {"aff": "0", "img": "", "text": ""},
                       {"aff": "0", "img": "", "text": ""},
                     ];
+                    Navigator.of(context).pop();
                   });
                 },
               ),
@@ -511,6 +516,7 @@ class _ProduitState extends State<Produit> {
                       {"aff": "0", "img": "", "text": ""},
                       {"aff": "0", "img": "", "text": ""},
                     ];
+                    Navigator.of(context).pop();
                   });
                 },
               ),
