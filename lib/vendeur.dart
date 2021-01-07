@@ -188,7 +188,7 @@ class Vendeur extends StatelessWidget {
                                     url.isNotEmpty
                                         ? Row(
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
+                                                MainAxisAlignment.center,
                                             children: [
                                               FlatButton(
                                                   onPressed: () async {

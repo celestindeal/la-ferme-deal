@@ -14,31 +14,30 @@ class Accueil extends StatelessWidget {
   List equipe = [
     {
       "nom": "Miriam",
-      "img": "img/pere.jpg",
-      "text":
-          "Miriam ^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
+      "img": "img/vache.jpg",
+      "text": "Chef de la transformation et de la commercialisation "
     },
     {
       "nom": "Jean-Christophe",
-      "img": "img/pere.jpg",
+      "img": "img/vache.jpg",
       "text":
           "Jean Bonjourd^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
     },
     {
-      "nom": "Catie",
-      "img": "img/pere.jpg",
+      "nom": "Cathy",
+      "img": "img/vache.jpg",
       "text":
           "Catie Bonjourd^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
     },
     {
       "nom": "Anne",
-      "img": "img/pere.jpg",
+      "img": "img/vache.jpg",
       "text":
           "Anne Bonjourd^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
     },
     {
       "nom": "Adrien",
-      "img": "img/pere.jpg",
+      "img": "img/vache.jpg",
       "text":
           "Adrien Bonjourd^p cq oiucbnsqdpvui zpinc poz hfpized,nc pzefn mpzeio pef,n PU NPOSih fnpODVN PIBFN POihi piuo< n,oijn opiu npi unrezpinpifud ,np"
     },
@@ -86,24 +85,6 @@ class Accueil extends StatelessWidget {
                         "04 77 64 50 96",
                       ),
                     ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "Facebook",
-                    ),
-                    FlatButton(
-                        onPressed: () async {
-                          if (await canLaunch(
-                              "https://www.facebook.com/La-ferme-D%C3%A9al-357148127955007")) {
-                            await launch(
-                                "https://www.facebook.com/La-ferme-D%C3%A9al-357148127955007");
-                          }
-                        },
-                        child: Text(
-                          "lien de la page",
-                        )),
                   ],
                 ),
               ],
@@ -159,9 +140,6 @@ class Accueil extends StatelessWidget {
                       AssetImage(
                         'img/bandeau-sec.jpg',
                       ),
-                      AssetImage(
-                        'img/camion.jpg',
-                      )
                     ],
                   )),
               Row(
@@ -175,7 +153,7 @@ class Accueil extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.all(30.0),
                           child: Text(
-                              "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.  L'étude formelle des textes s'appuie sur la linguistique, qui est l'approche scientifique du langage. ",
+                              "Nous sommes une exploitation familiale, installer depuis 1972 à Saint Romain la Motte. Jean-Christophe le fil et son épouse Miriam ont repris l’entreprise depuis 2005. Notre activité principale est la transformation de notre lait en fromage lactique vendu sur l’exploitation et chez nos partenaires. Sur l’exploitation il y a un troupeau charolais, et une partie culture qui permet de nourrir nos animaux. ",
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.headline5),
                         ),
@@ -393,9 +371,6 @@ class Accueil extends StatelessWidget {
                         AssetImage(
                           'img/bandeau-sec.jpg',
                         ),
-                        AssetImage(
-                          'img/camion.jpg',
-                        )
                       ],
                     )),
                 Row(
