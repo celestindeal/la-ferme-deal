@@ -1,3 +1,4 @@
+import 'package:ferme/main.dart';
 import 'package:ferme/ppBar.dart';
 import 'package:ferme/ppBar_phone.dart';
 import 'package:flutter/material.dart';
@@ -127,14 +128,90 @@ class _HistoireState extends State<Histoire> {
       histoire() {
         return Column(
           children: [
-            Text('fg gsg stg tsg trg stgst rg str gstr g'),
-            Text('fg gsg stg tsg trg stgst rg str gstr g'),
-            Text('fg gsg stg tsg trg stgst rg str gstr g'),
-            Text('fg gsg stg tsg trg stgst rg str gstr g'),
-            Text('fg gsg stg tsg trg stgst rg str gstr g'),
-            Text('fg gsg stg tsg trg stgst rg str gstr g'),
-            Text('fg gsg stg tsg trg stgst rg str gstr g'),
-            Text('fg gsg stg tsg trg stgst rg str gstr g'),
+            Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                Text(
+                  "2020",
+                  style: TextStyle(
+                      fontFamily: 'Compagnon-Medium',
+                      fontSize: 18,
+                      color: rouge_ferme),
+                ),
+                Text(" 20 laitière et 97 charolise",
+                    style: Theme.of(context).textTheme.headline4),
+                Container(
+                  color: rouge_ferme,
+                  height: 2,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                Text(
+                  "2020",
+                  style: TextStyle(
+                      fontFamily: 'Compagnon-Medium',
+                      fontSize: 18,
+                      color: rouge_ferme),
+                ),
+                Text(" 20 laitière et 97 charolise",
+                    style: Theme.of(context).textTheme.headline4),
+                Container(
+                  color: rouge_ferme,
+                  height: 2,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                Text(
+                  "2020",
+                  style: TextStyle(
+                      fontFamily: 'Compagnon-Medium',
+                      fontSize: 18,
+                      color: rouge_ferme),
+                ),
+                Text(" 20 laitière et 97 charolise",
+                    style: Theme.of(context).textTheme.headline4),
+                Container(
+                  color: rouge_ferme,
+                  height: 2,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                Text(
+                  "2020",
+                  style: TextStyle(
+                      fontFamily: 'Compagnon-Medium',
+                      fontSize: 18,
+                      color: rouge_ferme),
+                ),
+                Text(" 20 laitière et 97 charolise",
+                    style: Theme.of(context).textTheme.headline4),
+                Container(
+                  color: rouge_ferme,
+                  height: 2,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                ),
+              ],
+            ),
           ],
         );
       }
@@ -191,6 +268,9 @@ class _HistoireState extends State<Histoire> {
                   ),
                   Container(
                     child: Expanded(child: page ? histoire() : galerie()),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.1,
                   ),
                 ],
               ),

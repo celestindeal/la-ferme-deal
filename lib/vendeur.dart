@@ -145,7 +145,7 @@ class Vendeur extends StatelessWidget {
           body: Row(
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 0.15,
+                width: MediaQuery.of(context).size.width * 0.1,
               ),
               Container(
                 child: Expanded(
@@ -222,7 +222,7 @@ class Vendeur extends StatelessWidget {
                 ),
               ),
               Container(
-                width: MediaQuery.of(context).size.width * 0.15,
+                width: MediaQuery.of(context).size.width * 0.1,
               ),
             ],
           ));
