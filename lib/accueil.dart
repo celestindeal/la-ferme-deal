@@ -11,6 +11,8 @@ class Accueil extends StatelessWidget {
   final navigatorKey = GlobalKey<NavigatorState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
+  String presentation =
+      "Nous sommes une exploitation familiale, installer depuis 1972 à Saint Romain la Motte. Jean-Christophe le fil et son épouse Miriam ont repris l’entreprise depuis 2005. Notre activité principale est la transformation de notre lait en fromage lactique vendu sur l’exploitation et chez nos partenaires. Sur l’exploitation il y a un troupeau charolais, et une partie culture qui permet de nourrir nos animaux. ";
   List equipe = [
     {
       "nom": "Miriam",
@@ -149,16 +151,48 @@ class Accueil extends StatelessWidget {
                   ),
                   Container(
                     child: Expanded(
-                      child: Column(children: [
-                        Container(
-                          margin: const EdgeInsets.all(30.0),
-                          child: Text(
-                              "Nous sommes une exploitation familiale, installer depuis 1972 à Saint Romain la Motte. Jean-Christophe le fil et son épouse Miriam ont repris l’entreprise depuis 2005. Notre activité principale est la transformation de notre lait en fromage lactique vendu sur l’exploitation et chez nos partenaires. Sur l’exploitation il y a un troupeau charolais, et une partie culture qui permet de nourrir nos animaux. ",
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline5),
-                        ),
-                        Divider(color: Colors.grey[300]),
-                      ]),
+                      child: Container(
+                        margin: const EdgeInsets.all(30.0),
+                        child: Text(presentation,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headline5),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                ],
+              ),
+              Container(
+                color: rouge_ferme,
+                height: 2,
+                width: MediaQuery.of(context).size.width * 0.9,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: Center(
+                  child: Text(
+                    "Notre Ferme",
+                    style: TextStyle(
+                        fontFamily: 'Compagnon-Bold',
+                        fontSize: 8 + (0.01 * taille)),
+                  ),
+                ),
+              ),
+              Row(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  Container(
+                    child: Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.all(30.0),
+                        child: Text(presentation,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headline5),
+                      ),
                     ),
                   ),
                   Container(
@@ -377,16 +411,41 @@ class Accueil extends StatelessWidget {
                   children: [
                     Container(
                       child: Expanded(
-                        child: Column(children: [
-                          Container(
-                            margin: const EdgeInsets.all(30.0),
-                            child: Text(
-                                "Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.  L'étude formelle des textes s'appuie sur la linguistique, qui est l'approche scientifique du langage. ",
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.headline5),
-                          ),
-                          Divider(color: Colors.grey[300]),
-                        ]),
+                        child: Container(
+                          margin: const EdgeInsets.all(30.0),
+                          child: Text(presentation,
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.headline5),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  color: rouge_ferme,
+                  height: 2,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  child: Center(
+                    child: Text(
+                      "Notre Ferme",
+                      style:
+                          TextStyle(fontFamily: 'Compagnon-Bold', fontSize: 30),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Container(
+                      child: Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.all(30.0),
+                          child: Text(presentation,
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.headline5),
+                        ),
                       ),
                     ),
                   ],

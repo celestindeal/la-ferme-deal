@@ -27,7 +27,7 @@ AppBar headerNav(
                   Text(
                     "La ferme Deal",
                     style: TextStyle(
-                        fontFamily: 'Compagnon-Bold',
+                        fontFamily: 'Compagnon-Medium',
                         fontSize: 8 + (0.01 * taille)),
                   ),
                 ],

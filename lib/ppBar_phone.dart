@@ -19,7 +19,7 @@ AppBar headerphone(
           Text(
             "La ferme Deal",
             style: TextStyle(
-              fontFamily: 'Compagnon-Bold',
+              fontFamily: 'Compagnon-Medium',
             ),
           ),
         ],
@@ -32,14 +32,14 @@ AppBar headerphone(
     ),
     actions: <Widget>[
       IconButton(
-        icon: const Icon(Icons.import_contacts_outlined),
+        icon: const Icon(Icons.shopping_basket),
         onPressed: () {
           Navigator.pushNamedAndRemoveUntil(
               context, '/produit', (Route<dynamic> route) => false);
         },
       ),
       IconButton(
-        icon: const Icon(Icons.image_outlined),
+        icon: const Icon(Icons.house),
         onPressed: () {
           Navigator.pushNamedAndRemoveUntil(
               context, '/histoire', (Route<dynamic> route) => false);
