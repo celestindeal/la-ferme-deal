@@ -30,7 +30,7 @@ class _ProduitState extends State<Produit> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(produit[i]['text'],
-              style: Theme.of(context).textTheme.headline4),
+              style: Theme.of(context).textTheme.headline2),
           GestureDetector(
             onTap: () {
               return showDialog(
@@ -141,7 +141,7 @@ class _ProduitState extends State<Produit> {
                           {
                             "aff": "1",
                             "img": "img/specialiter.jpg",
-                            "text": "échallote ....."
+                            "text": "échallotes pempa jardin ..."
                           },
                           {"aff": "1", "img": "img/motte.jpg", "text": "Motte"},
                           {
@@ -424,7 +424,7 @@ class _ProduitState extends State<Produit> {
                       {
                         "aff": "1",
                         "img": "img/specialiter.jpg",
-                        "text": "échallote ....."
+                        "text": "échallotes pempa jardin ..."
                       },
                       {"aff": "1", "img": "img/motte.jpg", "text": "Motte"},
                       {

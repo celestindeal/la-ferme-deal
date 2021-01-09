@@ -174,17 +174,11 @@ class Vendeur extends StatelessWidget {
                                     Text(client[i]["lieu"],
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline4),
-                                    FlatButton(
-                                      onPressed: () {
-                                        UrlLauncher.launch(
-                                            'tel:${client[i]["phone"]}');
-                                      },
-                                      child: Text(client[i]["phone"],
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .headline2),
-                                    ),
+                                            .headline3),
+                                    Text(client[i]["phone"],
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline3),
                                     url.isNotEmpty
                                         ? Row(
                                             mainAxisAlignment:
@@ -200,7 +194,7 @@ class Vendeur extends StatelessWidget {
                                                   child: Text("lien du site",
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .headline2)),
+                                                          .headline4)),
                                             ],
                                           )
                                         : Container()

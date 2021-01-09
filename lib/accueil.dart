@@ -544,10 +544,16 @@ class Accueil extends StatelessWidget {
                           },
                         ),
                       ),
-                      Text("Lundi au samedi: 8h - 12h et 17h - 19h",
-                          style: Theme.of(context).textTheme.headline3),
-                      Text("Dimanche:        8h - 12h ",
-                          style: Theme.of(context).textTheme.headline3),
+                      Text(
+                        "Lundi au samedi: 8h - 12h et 17h - 19h",
+                        style: TextStyle(
+                            fontFamily: 'Compagnon-Medium', fontSize: 15),
+                      ),
+                      Text(
+                        "Dimanche:        8h - 12h ",
+                        style: TextStyle(
+                            fontFamily: 'Compagnon-Medium', fontSize: 15),
+                      ),
                       Container(
                         height: 10,
                       )

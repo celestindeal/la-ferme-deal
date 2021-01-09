@@ -24,12 +24,8 @@ AppBar headerNav(
                   //   width: 40,
                   //   height: 40,
                   // ),
-                  Text(
-                    "La ferme Deal",
-                    style: TextStyle(
-                        fontFamily: 'Compagnon-Medium',
-                        fontSize: 8 + (0.01 * taille)),
-                  ),
+                  Text("La ferme Deal",
+                      style: Theme.of(context).textTheme.headline1),
                 ],
               ),
               onPressed: () {

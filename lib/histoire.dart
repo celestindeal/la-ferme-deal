@@ -65,7 +65,7 @@ class _HistoireState extends State<Histoire> {
             ),
             Text(moment[i]["text"],
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline4),
+                style: Theme.of(context).textTheme.headline3),
             Container(
               height: 10,
             ),
