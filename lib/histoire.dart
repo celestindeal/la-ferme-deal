@@ -14,7 +14,11 @@ bool page = true;
 List moment = [
   {
     "date": "2020",
-    "text": "20 laitière et 97 charolise",
+    "text": "20 laitières montbéliardes et 97 charolaises et 100 hectares",
+  },
+  {
+    "date": "2005",
+    "text": "Installation Miriam Deal",
   },
   {
     "date": "31 Décembre 2004",
@@ -23,21 +27,21 @@ List moment = [
   },
   {
     "date": "1997",
-    "text": "Départ à la retraite de Charle Deal.",
+    "text": "Départ à la retraite de Charles Deal.",
   },
   {
     "date": "1987",
     "text":
-        "Arrivée de Jean-Christophe Deal. 75 hectares, 12 vaches laitières, 40 vaches charolaise. Constructions d'un nouveaux batiment pour les vaches.",
+        "Arrivée de Jean-Christophe Deal. 75 hectares, 12 vaches laitières, 40 vaches charolaises. Construction d'un nouveau batiment pour les vaches allaintes.",
   },
   {
     "date": "1972",
-    "text": "4 vaches Laitières, 30 vaches charolaises, 35 hectars.",
+    "text": "4 vaches Laitières, 30 vaches charolaises, 35 hectares.",
   },
   {
     "date": "1965",
     "text":
-        "Saint Edmond, 30 fromages par jour, La traite a la MAIN!!!! Vents de fromages à charlieu",
+        "Saint Edmond, 30 fromages par jour, La traite à la MAIN!!!! Ventes de fromages à charlieu",
   },
 ];
 
@@ -63,6 +67,9 @@ class _HistoireState extends State<Histoire> {
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline4),
             Container(
+              height: 10,
+            ),
+            Container(
               color: rouge_ferme,
               height: 2,
               width: MediaQuery.of(context).size.width * 0.8,
@@ -79,6 +86,7 @@ class _HistoireState extends State<Histoire> {
           his(3),
           his(4),
           his(5),
+          his(6),
         ],
       );
     }
@@ -140,15 +148,6 @@ class _HistoireState extends State<Histoire> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    aff_photo('img/histoire/p7.png');
-                  },
-                  child: Image.asset(
-                    'img/histoire/p7.png',
-                    width: MediaQuery.of(context).size.width * 0.25,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
                     aff_photo('img/histoire/p4.png');
                   },
                   child: Image.asset(
@@ -158,10 +157,19 @@ class _HistoireState extends State<Histoire> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    aff_photo('img/histoire/p9.png');
+                    aff_photo('img/histoire/p5.png');
                   },
                   child: Image.asset(
-                    'img/histoire/p9.png',
+                    'img/histoire/p5.png',
+                    width: MediaQuery.of(context).size.width * 0.25,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    aff_photo('img/histoire/p6.png');
+                  },
+                  child: Image.asset(
+                    'img/histoire/p6.png',
                     width: MediaQuery.of(context).size.width * 0.25,
                   ),
                 ),
@@ -171,19 +179,19 @@ class _HistoireState extends State<Histoire> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    aff_photo('img/histoire/p11.png');
+                    aff_photo('img/histoire/p7.png');
                   },
                   child: Image.asset(
-                    'img/histoire/p11.png',
+                    'img/histoire/p7.png',
                     width: MediaQuery.of(context).size.width * 0.25,
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
-                    aff_photo('img/histoire/p12.png');
+                    aff_photo('img/histoire/p8.png');
                   },
                   child: Image.asset(
-                    'img/histoire/p12.png',
+                    'img/histoire/p8.png',
                     width: MediaQuery.of(context).size.width * 0.25,
                   ),
                 ),
@@ -313,6 +321,22 @@ class _HistoireState extends State<Histoire> {
             ),
             GestureDetector(
               onTap: () {
+                aff_photo('img/histoire/p5.png');
+              },
+              child: Image.asset(
+                'img/histoire/p5.png',
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                aff_photo('img/histoire/p6.png');
+              },
+              child: Image.asset(
+                'img/histoire/p6.png',
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
                 aff_photo('img/histoire/p7.png');
               },
               child: Image.asset(
@@ -321,26 +345,10 @@ class _HistoireState extends State<Histoire> {
             ),
             GestureDetector(
               onTap: () {
-                aff_photo('img/histoire/p9.png');
+                aff_photo('img/histoire/p8.png');
               },
               child: Image.asset(
-                'img/histoire/p9.png',
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                aff_photo('img/histoire/p11.png');
-              },
-              child: Image.asset(
-                'img/histoire/p11.png',
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                aff_photo('img/histoire/p12.png');
-              },
-              child: Image.asset(
-                'img/histoire/p12.png',
+                'img/histoire/p8.png',
               ),
             ),
           ],

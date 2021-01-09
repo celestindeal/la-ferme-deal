@@ -52,6 +52,17 @@ AppBar headerphone(
               context, '/vendeur', (Route<dynamic> route) => false);
         },
       ),
+      IconButton(
+          icon: Image.asset(
+            'img/facebook.jpg',
+          ),
+          onPressed: () async {
+            if (await canLaunch(
+                "https://www.facebook.com/La-ferme-D%C3%A9al-357148127955007")) {
+              await launch(
+                  "https://www.facebook.com/La-ferme-D%C3%A9al-357148127955007");
+            }
+          }),
     ],
     backgroundColor: rouge_ferme,
   );

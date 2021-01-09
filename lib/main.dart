@@ -31,11 +31,19 @@ class _MainState extends State<Main> {
     return MaterialApp(
       theme: ThemeData(
         textTheme: TextTheme(
-          headline1: TextStyle(fontFamily: 'Compagnon-Bold', fontSize: 25),
-          headline2: TextStyle(fontFamily: 'Compagnon-Italic', fontSize: 18),
+          // 1 titre
+          // 2 titre secondaire
+          // 3 text
+          // 4 liens
+          // 5 ?
+          headline1:
+              TextStyle(fontFamily: 'Compagnon-Bold', fontSize: 35), //titre
+          headline2: TextStyle(fontFamily: 'Compagnon-Italic', fontSize: 28),
           headline3: TextStyle(fontFamily: 'Compagnon-Light', fontSize: 18),
-          headline4: TextStyle(fontFamily: 'Compagnon-Medium', fontSize: 18),
-          headline5: TextStyle(fontFamily: 'Compagnon-Roman', fontSize: 18),
+          headline4: TextStyle(
+              fontFamily: 'Compagnon-Medium', fontSize: 18), // titre secondaire
+          headline5:
+              TextStyle(fontFamily: 'Compagnon-Roman', fontSize: 18), // text
         ),
         brightness: Brightness.light,
         primaryColor: rouge_ferme,
