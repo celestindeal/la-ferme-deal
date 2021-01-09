@@ -391,11 +391,18 @@ class _HistoireState extends State<Histoire> {
             ]),
           ),
           body: SingleChildScrollView(
-            child: Row(
+            child: Column(
               children: [
-                Container(
-                  child: Expanded(child: page ? histoire() : galerie()),
+                Row(
+                  children: [
+                    Container(
+                      child: Expanded(child: page ? histoire() : galerie()),
+                    ),
+                  ],
                 ),
+                Container(
+                  height: 100,
+                )
               ],
             ),
           ));

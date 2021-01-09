@@ -320,8 +320,10 @@ class _ProduitState extends State<Produit> {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(produit[i]['text'],
-                  style: Theme.of(context).textTheme.headline4),
+              Center(
+                child: Text(produit[i]['text'],
+                    style: Theme.of(context).textTheme.headline4),
+              ),
               GestureDetector(
                 onTap: () {
                   return showDialog(

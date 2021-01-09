@@ -17,10 +17,8 @@ AppBar headerphone(
           //   height: 40,
           // ),
           Text(
-            "La ferme Deal",
-            style: TextStyle(
-              fontFamily: 'Compagnon-Medium',
-            ),
+            "La ferme Déal",
+            style: TextStyle(fontFamily: 'Compagnon-Medium', fontSize: 18),
           ),
         ],
       ),

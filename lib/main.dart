@@ -36,7 +36,10 @@ class _MainState extends State<Main> {
           // 3 text
           // 4 liens
           // 5 ?
-          headline1: TextStyle(fontFamily: 'Compagnon-Bold', fontSize: 35),
+          headline1: TextStyle(
+              fontFamily: 'Compagnon-Bold',
+              fontSize: 35,
+              fontWeight: FontWeight.bold),
           headline2: TextStyle(fontFamily: 'Compagnon-Italic', fontSize: 28),
           headline5: TextStyle(fontFamily: 'Compagnon-Light', fontSize: 18),
           headline3: TextStyle(fontFamily: 'Compagnon-Medium', fontSize: 18),

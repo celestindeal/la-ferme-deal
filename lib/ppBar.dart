@@ -24,8 +24,11 @@ AppBar headerNav(
                   //   width: 40,
                   //   height: 40,
                   // ),
-                  Text("La ferme Deal",
-                      style: Theme.of(context).textTheme.headline1),
+                  Text(
+                    "La ferme Déal",
+                    style:
+                        TextStyle(fontFamily: 'Compagnon-Medium', fontSize: 28),
+                  ),
                 ],
               ),
               onPressed: () {
@@ -42,7 +45,7 @@ AppBar headerNav(
                   child: Text(
                     'Produits',
                     style: TextStyle(
-                        fontFamily: 'Compagnon-Roman',
+                        fontFamily: 'Compagnon-Medium',
                         fontSize: 6 + (0.01 * taille)),
                   ),
                   onPressed: () {
@@ -58,7 +61,7 @@ AppBar headerNav(
                   child: Text(
                     'Histoire',
                     style: TextStyle(
-                        fontFamily: 'Compagnon-Roman',
+                        fontFamily: 'Compagnon-Medium',
                         fontSize: 6 + (0.01 * taille)),
                   ),
                   onPressed: () {
@@ -74,7 +77,7 @@ AppBar headerNav(
                   child: Text(
                     'Partenaires',
                     style: TextStyle(
-                        fontFamily: 'Compagnon-Roman',
+                        fontFamily: 'Compagnon-Medium',
                         fontSize: 6 + (0.01 * taille)),
                   ),
                   onPressed: () {

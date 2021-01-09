@@ -16,25 +16,25 @@ class Accueil extends StatelessWidget {
   List equipe = [
     {
       "nom": "Jean-Christophe",
-      "img": "img/vache.jpg",
+      "img": "img/histoire/p1.png",
       "text":
           "Passionné par l’agriculture depuis mon plus jeune âge, je décide de m’installé dans la ferme avec mes parents en 1987. Je prends soin de mes deux troupeaux de vaches (laitières et charolaises), je m’occupe également des cultures pour les nourrir ainsi que de la partie administrative. "
     },
     {
       "nom": "Miriam",
-      "img": "img/vache.jpg",
+      "img": "img/histoire/p1.png",
       "text":
           "Après plusieurs années en tant qu’aide-soignante en maison de retraite, j’ai suivi une formation agricole ce qui m’a permis de m’associer à mon mari en 2005. Dans la ferme je suis en charge de la fabrication des fromages pour régaler vos papilles ainsi que la partie gestion et commercialisation. "
     },
     {
       "nom": "Catherine ",
-      "img": "img/vache.jpg",
+      "img": "img/histoire/p1.png",
       "text":
           "Arrivée dans l’aventure en 2015, Catherine s’occupe de la fabrication des fromages, de la préparation des commandes et des livraisons. Nous sommes heureux de la compter dans notre équipe depuis toutes ces années."
     },
     {
       "nom": "Anne",
-      "img": "img/vache.jpg",
+      "img": "img/histoire/p1.png",
       "text":
           "Arrivée en tant qu’apprentie en 2019, Anne a été capable de seconder les deux associés très rapidement dans leurs tâches quotidiennes (ferme et fromagerie un vrai petit couteau-suisse), la garder dans notre équipe était une évidence. "
     },
@@ -74,11 +74,20 @@ class Accueil extends StatelessWidget {
                     },
                     child: Text(
                       "285 chemin de la roche, 42 640 Saint Romain la Motte",
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headline3,
                     )),
-                Text(
-                  "numéro de télephone : 04 77 64 50 96 ",
-                  style: Theme.of(context).textTheme.headline3,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.phone,
+                      color: Colors.black,
+                    ),
+                    Text(
+                      " 04 77 64 50 96",
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -122,12 +131,6 @@ class Accueil extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                child: Text("C'est",
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.headline3),
-              ),
               Row(
                 children: [
                   Container(
@@ -180,7 +183,7 @@ class Accueil extends StatelessWidget {
                             textAlign: TextAlign.start,
                             style: Theme.of(context).textTheme.headline3),
                       ),
-                      Text("88 ha  de prairies ",
+                      Text("88 ha de prairies ",
                           textAlign: TextAlign.start,
                           style: Theme.of(context).textTheme.headline3),
                     ],
@@ -217,14 +220,24 @@ class Accueil extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "ASSOCIÉ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: rouge_ferme),
-                        ),
+                        i == 0
+                            ? Text(
+                                "ASSOCIÉ",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: rouge_ferme),
+                              )
+                            : Text(
+                                "ASSOCIÉE",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: rouge_ferme),
+                              ),
                         Text(
                           equipe[i]["nom"],
-                          style: Theme.of(context).textTheme.headline2,
+                          style: TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Compagnon-Italic',
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -234,7 +247,11 @@ class Accueil extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
                       equipe[i]["text"],
-                      style: Theme.of(context).textTheme.headline3,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Compagnon-Italic',
+                      ),
                       textAlign: TextAlign.start,
                     ),
                   ),
@@ -284,7 +301,7 @@ class Accueil extends StatelessWidget {
                         margin: const EdgeInsets.all(30.0),
                         child: Text(presentation,
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.headline3),
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ),
@@ -326,7 +343,11 @@ class Accueil extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
                       equipe[2]["nom"],
-                      style: Theme.of(context).textTheme.headline2,
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Compagnon-Italic',
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -337,7 +358,11 @@ class Accueil extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
                       equipe[3]["nom"],
-                      style: Theme.of(context).textTheme.headline2,
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Compagnon-Italic',
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -348,7 +373,11 @@ class Accueil extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
                       equipe[4]["nom"],
-                      style: Theme.of(context).textTheme.headline2,
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Compagnon-Italic',
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   )
@@ -378,7 +407,11 @@ class Accueil extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
                       equipe[2]["text"],
-                      style: Theme.of(context).textTheme.headline3,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Compagnon-Italic',
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -389,7 +422,11 @@ class Accueil extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
                       equipe[3]["text"],
-                      style: Theme.of(context).textTheme.headline3,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Compagnon-Italic',
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -400,7 +437,11 @@ class Accueil extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.2,
                     child: Text(
                       equipe[4]["text"],
-                      style: Theme.of(context).textTheme.headline3,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Compagnon-Italic',
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   )
@@ -422,8 +463,14 @@ class Accueil extends StatelessWidget {
           children: [
             Container(
                 child: Center(
-                    child: Text(equipe[i]["nom"],
-                        style: Theme.of(context).textTheme.headline2))),
+                    child: Text(
+              equipe[i]["nom"],
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Compagnon-Italic',
+              ),
+            ))),
             Image.asset(
               equipe[i]["img"],
             ),
@@ -475,7 +522,7 @@ class Accueil extends StatelessWidget {
                           margin: const EdgeInsets.fromLTRB(30, 30, 30, 5),
                           child: Text(presentation,
                               textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline3),
+                              style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                       ),
                     ),
@@ -517,7 +564,7 @@ class Accueil extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
-                        height: 30,
+                        height: 50,
                         child: FlatButton(
                             onPressed: () async {
                               if (await canLaunch(
@@ -526,16 +573,36 @@ class Accueil extends StatelessWidget {
                                     "https://www.google.fr/maps/place/285+Chemin+de+la+Roche,+42640+Saint-Romain-la-Motte/@46.0875441,3.9602611,4364m/data=!3m1!1e3!4m12!1m6!3m5!1s0x47f400dfc0e7439f:0x207c8277064782e5!2sEcole+Publique!8m2!3d46.1011292!4d3.9658738!3m4!1s0x47f40140bfd291a7:0xf571736fe413daca!8m2!3d46.0821708!4d3.963975");
                               }
                             },
-                            child: Text(
-                                "285 chemin de la roche, 42 640 Saint Romain la Motte",
-                                style: Theme.of(context).textTheme.headline4)),
+                            child: Column(
+                              children: [
+                                Text(
+                                  "285 chemin de la roche, ",
+                                  style: Theme.of(context).textTheme.headline3,
+                                ),
+                                Text(
+                                  "42 640 Saint Romain la Motte",
+                                  style: Theme.of(context).textTheme.headline3,
+                                ),
+                              ],
+                            )),
                       ),
                       Container(
                         height: 30,
                         margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
                         child: FlatButton(
-                          child: Text("Numéro de télephone: 04 77 64 50 96",
-                              style: Theme.of(context).textTheme.headline4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.phone,
+                                color: Colors.black,
+                              ),
+                              Text(
+                                " 04 77 64 50 96",
+                                style: Theme.of(context).textTheme.headline3,
+                              ),
+                            ],
+                          ),
                           onPressed: () {
                             // UrlLauncher.launch('04 77 64 50 96');
                             String phone = '0477645096';
@@ -545,17 +612,17 @@ class Accueil extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "Lundi au samedi: 8h - 12h et 17h - 19h",
+                        "Lundi au samedi: 9h-11h30 et 17h-19h",
                         style: TextStyle(
-                            fontFamily: 'Compagnon-Medium', fontSize: 15),
+                            fontFamily: 'Compagnon-Medium', fontSize: 18),
                       ),
                       Text(
-                        "Dimanche:        8h - 12h ",
+                        "Dimanche et jours fériés: 9h-11h30 ",
                         style: TextStyle(
-                            fontFamily: 'Compagnon-Medium', fontSize: 15),
+                            fontFamily: 'Compagnon-Medium', fontSize: 18),
                       ),
                       Container(
-                        height: 10,
+                        height: 15,
                       )
                     ],
                   ),
